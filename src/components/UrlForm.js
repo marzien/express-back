@@ -27,7 +27,7 @@ class UrlForm extends Component {
     render() { 
         return (
             <form className="UrlLinkForm" onSubmit={this.handleSubmit}>
-                <label htmlFor='url'>Your's URL link:</label>
+                <label htmlFor='url'>Your URL link:</label>
                 <input
                     type='text'
                     placeholder='http://...'
