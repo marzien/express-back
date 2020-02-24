@@ -14,14 +14,13 @@ class UrlForm extends Component {
             [evt.target.name]: evt.target.value
         });
     }
-    handleSubmit(evt) {
+    async handleSubmit(evt) {
         evt.preventDefault();
-        var urlVal = this.state.url;
-        console.log(urlVal);
-        axios.post('/api/parser', urlVal)
-            .then(res => console.log(res.data)
+        const data = {url: this.state.url};
+        axios.post('/api/parser', data)
+            .then(res => console.log(res.body))
             .catch(err => console.log('ERROR: can\'t post URL'))
-            );
+
         this.setState({ url: "" });
     }
     render() { 
